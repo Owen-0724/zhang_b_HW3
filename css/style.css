@@ -5,12 +5,24 @@
     padding: 0;
 }
 
+:root{
+    --color1: #fff;
+    --color2: rgb(220, 70, 70);
+    --color3: rgb(78, 228, 78);
+
+}
+
 body{
-    background-color: black;
+    background-color: lightgray;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    background-image: url(../img/table.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
 }
+
 
 main{
     display: flex;
@@ -18,22 +30,28 @@ main{
     flex-wrap: wrap;
 }
 
-header >h1{
+#header_main{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(0, 170, 255);
     text-align: center;
-    padding: 8px;
+    padding: 12px;
+    background-color: rgba(65, 219, 230, 0.2)
 }
 
 article{
     width: 400px;
     border: 4px solid white;
-    border-radius: 10px;
+    border-radius: 4px;
     margin: 10px 12px;
     text-align: left;
+    background-color: gray;
 
 }
 
 article > h2{
-    color: gray;
+    color: white;
     padding: 4px 8px;
 }
 
@@ -50,10 +68,10 @@ article:first-of-type{
 }
 
 #done{
-    border: 4px solid green;
+    border: 4px solid var(--color3);
 }
 #done h2{
-    color: green;
+    color: var(--color3);
 }
 
 li{
@@ -77,10 +95,50 @@ ul li{
     background-color: rgba(0, 255, 0, 0.2);
 }
 
+/*--checkbox styling--*/
+    
+    /*--check marks--*/
+
+    input[type="checkbox"]:checked + span::after{
+    content: "\2713";
+    color: black;
+    }
+
 input[type="checkbox"]{
     appearance: none;
-    padding: 32px;
-    border: 32px solid red;
-    border-radius: 32px;
+    display: inline-block;
+    padding: 4px;
+    margin: 0 4px;
+    border: 2px solid var(--color2);
+    border-radius: 2px;
     background-color: white;
+}
+
+input[type="checkbox"].checkbox_done{
+    appearance: none;
+    display: inline-block;
+    padding: 4px;
+    margin: 0 4px;
+    border: 2px solid var(--color3);
+    border-radius: 2px;
+    background-color: white;
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--color2);
+}
+
+
+input[type="checkbox"]:checked + span{
+    background-color: var(--color2);
+    color: var(--color1)
+}
+
+input[type="checkbox"].checkbox_done:checked{
+    background-color: var(--color3);
+}
+
+input[type="checkbox"].checkbox_done:checked + span{
+    background-color: var(--color3);
+    color: var(--color1);
 }
