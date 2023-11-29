@@ -16,6 +16,9 @@ main{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-image: url(../img/table.jpg);
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 header >h1{
